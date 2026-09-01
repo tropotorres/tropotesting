@@ -1,0 +1,18 @@
+{
+    "commandline_args": null,
+    "credentials": "YOUR_CREDENTIALS",
+    "description": "",
+    "execution_timeout": 3600,
+    "id": "OHK-lxilpgvn",
+    "max_retries": 0,
+    "name": "Install Apache on Ubuntu",
+    "remove_after_run": true,
+    "resource_technologies": [],
+    "run_with_sudo": false,
+    "script_filename": "OHK-lxilpgvn_script.sh",
+    "shared": true,
+    "target_os_families": [
+        "Linux -> Ubuntu"
+    ],
+    "type": "Remote Script"
+}

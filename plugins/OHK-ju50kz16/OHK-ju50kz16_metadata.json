@@ -1,0 +1,11 @@
+{
+    "description": null,
+    "id": "OHK-ju50kz16",
+    "max_retries": 0,
+    "name": "Generate options for 'Expiration Date' (1)",
+    "resource_technologies": [],
+    "script_filename": "OHK-ju50kz16_script.py",
+    "shared": false,
+    "target_os_families": [],
+    "type": "CloudBolt Plug-in"
+}

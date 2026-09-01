@@ -1,0 +1,224 @@
+{
+    "any_group_can_deploy": false,
+    "auto_historical_resources": false,
+    "deployment_items": [
+        {
+            "all_environments_enabled": false,
+            "allowed_os_families": [
+                "Ubuntu"
+            ],
+            "applications": null,
+            "deploy_seq": 1,
+            "description": "",
+            "environment_selection_orchestration": null,
+            "execute_in_parallel": true,
+            "hostname_template": "web-{{group.name|lower|first}}-00X",
+            "id": "BDI-t2ivk3g4",
+            "name": "Web",
+            "os_build": {
+                "href": "/api/v3/cmp/osBuilds/OSB-7nuaylb3/",
+                "title": "Ubuntu 24.04"
+            },
+            "rate": null,
+            "restrict_applications": false,
+            "show_on_order_form": false,
+            "tier_type": "server"
+        },
+        {
+            "all_environments_enabled": false,
+            "allowed_os_families": [
+                "Ubuntu"
+            ],
+            "applications": null,
+            "deploy_seq": 2,
+            "description": "",
+            "environment_selection_orchestration": null,
+            "execute_in_parallel": false,
+            "hostname_template": "db-{{group.name|lower|first}}-00X",
+            "id": "BDI-sidg9gzz",
+            "name": "Database",
+            "os_build": {
+                "href": "/api/v3/cmp/osBuilds/OSB-7nuaylb3/",
+                "title": "Ubuntu 24.04"
+            },
+            "rate": null,
+            "restrict_applications": false,
+            "show_on_order_form": false,
+            "tier_type": "server"
+        },
+        {
+            "action_name": "Install Postgres",
+            "continue_on_failure": false,
+            "dependencies": {
+                "hook": "plugins/OHK-l0rs72lw"
+            },
+            "deploy_seq": 3,
+            "description": "",
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-99cbsjl1",
+            "name": "Install Postgres",
+            "rate": null,
+            "run_on_scale_up": true,
+            "server_tiers": [
+                "Database"
+            ],
+            "show_on_order_form": false,
+            "tier_type": "script"
+        },
+        {
+            "action_name": "Install Apache on Ubuntu",
+            "continue_on_failure": false,
+            "dependencies": {
+                "hook": "plugins/OHK-lxilpgvn"
+            },
+            "deploy_seq": 4,
+            "description": "",
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-3zdfsvpg",
+            "name": "Install Apache on Ubuntu",
+            "rate": null,
+            "run_on_scale_up": true,
+            "server_tiers": [
+                "Web"
+            ],
+            "show_on_order_form": false,
+            "tier_type": "script"
+        },
+        {
+            "action_name": "SLA",
+            "continue_on_failure": false,
+            "dependencies": {
+                "hook": "plugins/OHK-jh2rpyu9"
+            },
+            "deploy_seq": 5,
+            "description": null,
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-b3kcbzud",
+            "name": "SLA",
+            "rate": null,
+            "run_on_scale_up": true,
+            "show_on_order_form": false,
+            "tier_type": "plugin"
+        }
+    ],
+    "deployment_permissions": [],
+    "description": "",
+    "favorited": true,
+    "icon": "multitier.png",
+    "id": "BP-b2ewtetr",
+    "is_orderable": true,
+    "labels": [
+        {
+            "color": "rgba(45,244,50,1)",
+            "icon": "vCenterLogo.png",
+            "id": "TAG-g6fbglvo",
+            "image": "/static/uploads/tags/vCenterLogo.png",
+            "name": "VMware",
+            "parent": {
+                "color": "rgba(25,171,188,1)",
+                "icon": "cloud.png",
+                "id": "TAG-cvblowou",
+                "image": "/static/uploads/tags/cloud.png",
+                "name": "Clouds",
+                "sequence": 0
+            },
+            "sequence": 0
+        },
+        {
+            "color": "rgba(244,226,143,1)",
+            "icon": "aws_account.png",
+            "id": "TAG-nlvmbvxj",
+            "image": "/static/uploads/tags/aws_account.png",
+            "name": "AWS",
+            "parent": {
+                "color": "rgba(25,171,188,1)",
+                "icon": "cloud.png",
+                "id": "TAG-cvblowou",
+                "image": "/static/uploads/tags/cloud.png",
+                "name": "Clouds",
+                "sequence": 0
+            },
+            "sequence": 0
+        },
+        {
+            "color": null,
+            "icon": "azure2.png",
+            "id": "TAG-0r4q7b80",
+            "image": "/static/uploads/tags/azure2.png",
+            "name": "Azure",
+            "parent": {
+                "color": "rgba(25,171,188,1)",
+                "icon": "cloud.png",
+                "id": "TAG-cvblowou",
+                "image": "/static/uploads/tags/cloud.png",
+                "name": "Clouds",
+                "sequence": 0
+            },
+            "sequence": 0
+        },
+        {
+            "color": "rgba(178,99,99,1)",
+            "icon": "iaas.png",
+            "id": "TAG-7qvf714t",
+            "image": "/static/uploads/tags/iaas.png",
+            "name": "IaaS",
+            "sequence": 0
+        }
+    ],
+    "last_updated": "2026-09-01",
+    "management_actions": [],
+    "metadata_version": "2026.1.0",
+    "name": "Multi-Tier Blueprint",
+    "parameters": [
+        {
+            "allow_multiple": false,
+            "available_all_servers": false,
+            "constraints": {
+                "maximum": "14.00",
+                "minimum": "1.00"
+            },
+            "description": null,
+            "destination": "Both",
+            "field_dependency_controlling_set": [],
+            "field_dependency_dependent_set": [],
+            "gen_options_hooks": [
+                {
+                    "dependencies": {
+                        "orchestration_hook": "orchestration_actions/HPA-smw9l7jb"
+                    },
+                    "enabled": true,
+                    "name": "Generate options for 'Expiration Date' (1)"
+                }
+            ],
+            "global_options": [],
+            "id": "CF-c5jwn8kl",
+            "label": "Expiration Date",
+            "name": "expiration_date",
+            "options": [],
+            "placeholder": null,
+            "relevant_osfamilies": [],
+            "required": true,
+            "show_as_attribute": false,
+            "show_on_servers": true,
+            "type": "DT",
+            "value_pattern_string": null
+        }
+    ],
+    "resource_name_template": "myapp-{{group.name}}-00X",
+    "resource_type": {
+        "icon": "fas fa-sitemap",
+        "id": "RT-7iar07xx",
+        "internal_only": false,
+        "label": "Multi-Tier Application",
+        "lifecycle": "ACTIVE",
+        "list_view_columns": [],
+        "name": "multi_tier_application",
+        "plural_label": "Multi-Tier Applications"
+    },
+    "sequence": 60,
+    "show_recipient_field_on_order_form": false,
+    "teardown_items": []
+}

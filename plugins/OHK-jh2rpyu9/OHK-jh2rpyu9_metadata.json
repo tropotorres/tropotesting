@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "id": "OHK-jh2rpyu9",
+    "max_retries": 0,
+    "name": "SLA",
+    "resource_technologies": [],
+    "script_filename": "OHK-jh2rpyu9_script.py",
+    "shared": false,
+    "target_os_families": [],
+    "type": "CloudBolt Plug-in"
+}

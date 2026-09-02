@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "id": "OHK-kk0wgpsl",
+    "max_retries": 0,
+    "name": "Test Repo",
+    "resource_technologies": [],
+    "script_filename": "OHK-kk0wgpsl_script.py",
+    "shared": false,
+    "target_os_families": [],
+    "type": "CloudBolt Plug-in"
+}

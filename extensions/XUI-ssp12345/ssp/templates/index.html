@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script type="importmap">{"imports":{"vue":"/static/ssp/vendors/vue.js","vuetify":"/static/ssp/vendors/vuetify.js"}}</script>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="base-uri 'self'; object-src 'none'; script-src 'self' 'sha256-awMov4MCQDoeCZ+HF76eNFipo1xaWYyo1Kj0XgvcZJ4=' 'sha256-68BAX7Fe/1WwlT5VnI4OZbcKv4Bu7n/cZG0zn9RWWTQ=' https://cdn.heapanalytics.com https://heapanalytics.com https://use.fontawesome.com blob:; style-src 'self' https://cdn.jsdelivr.net/ https://fonts.googleapis.com/ https://heapanalytics.com https://use.fontawesome.com 'unsafe-inline'"
+    />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <link rel="icon" href="/static/ssp/favicon.ico" />
+    <title>Self-Service Portal</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v6.4.0/js/all.js"
+      integrity="sha384-Y7LSKwoY+C2iyfu/oupNnkGEN3EgA6skmJeVg5AyQk7ttcjX0XsLREmmuJW/SdbU"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" crossorigin src="/static/ssp/assets/index-8037c645.js"></script>
+    <link rel="modulepreload" crossorigin href="/static/ssp/assets/vendor-60b73f0d.js">
+    <link rel="stylesheet" href="/static/ssp/assets/vendor-340df6b2.css">
+    <link rel="stylesheet" href="/static/ssp/assets/index-54ef362a.css">
+  </head>
+
+  <body>
+    <div id="app"></div>
+    {{ data|json_script:"app-data"}}
+    
+  </body>
+</html>

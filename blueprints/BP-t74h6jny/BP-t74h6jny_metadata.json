@@ -1,0 +1,243 @@
+{
+    "any_group_can_deploy": false,
+    "auto_historical_resources": false,
+    "deployment_items": [
+        {
+            "all_environments_enabled": false,
+            "allowed_os_families": null,
+            "applications": null,
+            "deploy_seq": 1,
+            "description": "Things about this server",
+            "environment_selection_orchestration": null,
+            "execute_in_parallel": false,
+            "hostname_template": "{{group.name|lower|first}}-{{os_family.get_base_name|first|lower}}-00X",
+            "id": "BDI-axnijhpp",
+            "name": "Server",
+            "os_build": null,
+            "rate": null,
+            "restrict_applications": false,
+            "show_on_order_form": false,
+            "tier_type": "server"
+        },
+        {
+            "action_name": "Thing with Sliders",
+            "continue_on_failure": false,
+            "dependencies": {
+                "hook": "plugins/OHK-mo5s17xl"
+            },
+            "deploy_seq": 2,
+            "description": null,
+            "enabled": true,
+            "execute_in_parallel": false,
+            "id": "BDI-lajanndr",
+            "name": "Thing with Sliders",
+            "rate": null,
+            "run_on_scale_up": true,
+            "show_on_order_form": false,
+            "tier_type": "plugin"
+        }
+    ],
+    "deployment_permissions": [],
+    "description": "A Blueprint for creating simple IaaS Resources",
+    "favorited": true,
+    "icon": "server1.png",
+    "id": "BP-t74h6jny",
+    "is_orderable": true,
+    "labels": [
+        {
+            "color": "rgba(45,244,50,1)",
+            "icon": "vCenterLogo.png",
+            "id": "TAG-g6fbglvo",
+            "image": "/static/uploads/tags/vCenterLogo.png",
+            "name": "VMware",
+            "parent": {
+                "color": "rgba(25,171,188,1)",
+                "icon": "cloud.png",
+                "id": "TAG-cvblowou",
+                "image": "/static/uploads/tags/cloud.png",
+                "name": "Clouds",
+                "sequence": 0
+            },
+            "sequence": 0
+        },
+        {
+            "color": "rgba(244,226,143,1)",
+            "icon": "aws_account.png",
+            "id": "TAG-nlvmbvxj",
+            "image": "/static/uploads/tags/aws_account.png",
+            "name": "AWS",
+            "parent": {
+                "color": "rgba(25,171,188,1)",
+                "icon": "cloud.png",
+                "id": "TAG-cvblowou",
+                "image": "/static/uploads/tags/cloud.png",
+                "name": "Clouds",
+                "sequence": 0
+            },
+            "sequence": 0
+        },
+        {
+            "color": null,
+            "icon": "azure2.png",
+            "id": "TAG-0r4q7b80",
+            "image": "/static/uploads/tags/azure2.png",
+            "name": "Azure",
+            "parent": {
+                "color": "rgba(25,171,188,1)",
+                "icon": "cloud.png",
+                "id": "TAG-cvblowou",
+                "image": "/static/uploads/tags/cloud.png",
+                "name": "Clouds",
+                "sequence": 0
+            },
+            "sequence": 0
+        },
+        {
+            "color": "rgba(224,17,17,1)",
+            "icon": "OpenStack.png",
+            "id": "TAG-xwcnfh79",
+            "image": "/static/uploads/tags/OpenStack.png",
+            "name": "OpenStack",
+            "parent": {
+                "color": "rgba(25,171,188,1)",
+                "icon": "cloud.png",
+                "id": "TAG-cvblowou",
+                "image": "/static/uploads/tags/cloud.png",
+                "name": "Clouds",
+                "sequence": 0
+            },
+            "sequence": 0
+        },
+        {
+            "color": "rgba(255,133,0,1)",
+            "icon": "OpenShift_Logo.png",
+            "id": "TAG-9t6dn4od",
+            "image": "/static/uploads/tags/OpenShift_Logo.png",
+            "name": "OpenShift",
+            "parent": {
+                "color": "rgba(25,171,188,1)",
+                "icon": "cloud.png",
+                "id": "TAG-cvblowou",
+                "image": "/static/uploads/tags/cloud.png",
+                "name": "Clouds",
+                "sequence": 0
+            },
+            "sequence": 0
+        },
+        {
+            "color": "rgba(178,99,99,1)",
+            "icon": "iaas.png",
+            "id": "TAG-7qvf714t",
+            "image": "/static/uploads/tags/iaas.png",
+            "name": "IaaS",
+            "sequence": 0
+        }
+    ],
+    "last_updated": "2026-09-02",
+    "management_actions": [],
+    "metadata_version": "2026.1.0",
+    "name": "IaaS Duplicate Test",
+    "parameters": [
+        {
+            "allow_multiple": false,
+            "available_all_servers": false,
+            "constraints": "Unconstrained",
+            "description": "this is a code section",
+            "destination": "Build Items",
+            "field_dependency_controlling_set": [],
+            "field_dependency_dependent_set": [],
+            "global_options": [],
+            "id": "CF-urolk66b",
+            "label": "Test Code",
+            "name": "code_segment",
+            "options": [],
+            "placeholder": "",
+            "relevant_osfamilies": [],
+            "required": false,
+            "show_as_attribute": false,
+            "show_on_servers": false,
+            "type": "CODE",
+            "value_pattern_string": null
+        },
+        {
+            "allow_multiple": false,
+            "available_all_servers": false,
+            "constraints": "Unconstrained",
+            "description": null,
+            "destination": "Both",
+            "field_dependency_controlling_set": [],
+            "field_dependency_dependent_set": [],
+            "gen_options_hooks": [
+                {
+                    "dependencies": {
+                        "orchestration_hook": "orchestration_actions/HPA-smw9l7jb"
+                    },
+                    "enabled": true,
+                    "name": "Generate options for 'Expiration Date' (1)"
+                }
+            ],
+            "global_options": [],
+            "id": "CF-c5jwn8kl",
+            "label": "Expiration Date",
+            "name": "expiration_date",
+            "options": [],
+            "placeholder": null,
+            "relevant_osfamilies": [],
+            "required": true,
+            "show_as_attribute": false,
+            "show_on_servers": true,
+            "type": "DT",
+            "value_pattern_string": null
+        },
+        {
+            "allow_multiple": false,
+            "available_all_servers": false,
+            "constraints": "Unconstrained",
+            "description": "The start date and time for a job to run.",
+            "destination": "Both",
+            "field_dependency_controlling_set": [],
+            "field_dependency_dependent_set": [],
+            "global_options": [],
+            "id": "CF-211y2irp",
+            "label": "Scheduled Job Start Time",
+            "name": "scheduled_job_datetime",
+            "options": [],
+            "placeholder": null,
+            "relevant_osfamilies": [],
+            "required": false,
+            "show_as_attribute": false,
+            "show_on_servers": false,
+            "type": "DTM",
+            "value_pattern_string": null
+        },
+        {
+            "allow_multiple": false,
+            "available_all_servers": true,
+            "constraints": {
+                "maximum": "200.00",
+                "minimum": "10.00",
+                "slider_increment": "10.00"
+            },
+            "description": "Making sliders",
+            "destination": "Build Items",
+            "field_dependency_controlling_set": [],
+            "field_dependency_dependent_set": [],
+            "global_options": [],
+            "id": "CF-zn170k9x",
+            "label": "Slider Integer",
+            "name": "slider_integer",
+            "options": [],
+            "placeholder": "",
+            "relevant_osfamilies": [],
+            "required": false,
+            "show_as_attribute": true,
+            "show_on_servers": true,
+            "type": "INT",
+            "value_pattern_string": ""
+        }
+    ],
+    "resource_name_template": null,
+    "sequence": 10,
+    "show_recipient_field_on_order_form": false,
+    "teardown_items": []
+}

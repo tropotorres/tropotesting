@@ -1,0 +1,11 @@
+{
+    "description": "",
+    "id": "OHK-mo5s17xl",
+    "max_retries": 0,
+    "name": "Thing with Sliders",
+    "resource_technologies": [],
+    "script_filename": "OHK-mo5s17xl_script.py",
+    "shared": false,
+    "target_os_families": [],
+    "type": "CloudBolt Plug-in"
+}
